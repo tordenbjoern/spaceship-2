@@ -42,24 +42,23 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
     sprites.destroy(sprite)
     info.changeLifeBy(-1)
 })
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprites.destroy(otherSprite, effects.fire, 500)
-    sprites.destroy(sprite)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite2, otherSprite2) {
+    sprites.destroy(otherSprite2, effects.fire, 500)
+    sprites.destroy(sprite2)
     Penge += 1
 })
 let Alien: Sprite = null
+let Penge = 0
 let Skud: Sprite = null
 let Rumskib: Sprite = null
 tiles.setCurrentTilemap(tilemap`level1`)
 Rumskib = sprites.create(assets.image`Rumskib`, SpriteKind.Player)
 tiles.placeOnTile(Rumskib, tiles.getTileLocation(10, 10))
 info.setLife(5)
-let Penge = 0
 tiles.placeOnTile(Rumskib, tiles.getTileLocation(20, 48.5))
 Rumskib.fx = 10
 Rumskib.fy = 10
-let camx = Rumskib.x
-let camy = Rumskib.y
+scene.cameraFollowSprite(Rumskib)
 imagesExt.moveSpriteAngular(
 Rumskib,
 assets.image`Rumskib`,
@@ -70,13 +69,7 @@ assets.image`Rumskib`,
 7,
 90
 )
-game.onUpdate(function () {
-    if (true) {
-        camx = Rumskib.x
-        camy = Rumskib.y
-        scene.centerCameraAt(camx, camy)
-    }
-})
+
 game.onUpdateInterval(2000, function () {
     Alien = sprites.create(img`
         ........................
