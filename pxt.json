@@ -1,0 +1,29 @@
+{
+    "name": "Spaceship #2",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "imagesExt": "github:johnjuuljensen/makecode_imagesext#v0.0.8"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "tilemap.g.jres",
+        "tilemap.g.ts",
+        "images.g.jres",
+        "images.g.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.49",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj"
+}
