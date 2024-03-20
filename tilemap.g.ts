@@ -79,7 +79,7 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, [], -Infinity);
+`, [], TileScale.Sixteen);
         }
         return null;
     })
